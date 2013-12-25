@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+<head>
+    <title>Gallery changed</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div>
+        <article class="main">
+            <div class="inner_box">
+                <i class="sd sd_right_1"></i>
+                <div class="cnt_box">
+                    <div class="center_box center_box_3">
+                        <div class="row_box row_box_4">
+                            <i class="sd sd_left"></i>
+                            <div class="info_box">
+                                <h2 class="txt title">相片</h2>
+                                <!-- photo_wall 组件视图 -->
+                                <div id="photo_wall" class="photos_box clearfix">
+                                    <div class="curr">
+                                        <div class="img_box">
+                                            <!-- focus_view 视图 -->
+                                            <ul id="focus_view"></ul>
+                                        </div>
+                                        <i class="corner">
+                                            <a href="javascript:" class="txt icon_next">next</a>
+                                            <a href="javascript:" class="txt icon_prev">prev</a>
+                                        </i>
+                                    </div>
+                                    <div class="photos_tab">
+                                        <div class="p_wrap">
+                                            <!-- page_view 视图 -->
+                                            <ul id="photo_page" class="clearfix"></ul>      
+                                        </div>
+                                        <!-- page 翻页区 -->
+                                        <div id="tab_box" class="tab_box"></div>
+                                        <div class="txt_box">
+                                            <!-- 文字说明区域 -->
+                                            <div class="detail">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+    <!-- underscore 模版 -->
+    <script type="text/template" id="large-photo-template"> 
+        <a href="javascript:">
+                <img src="<%= src_l %>" alt="">
+        </a>    
+    </script>       
+    <script type="text/template" id="small-photo-template"> 
+        <i class="border"></i>
+        <div class="img_box">
+                <img src="<%= src_s %>" alt="">
+        </div>  
+    </script>
+    <script type="text/template" id="photo-tabs-template">
+        <% for( var i = 0; i < tabs_len; i++ ){ 
+              if( i == 0 ){ %>
+                  <a class="on" href="javascript:"></a>
+           <% }else if( i == tabs_len -1 ){ %>
+                  <a class="last" href="javascript:"></a>
+           <% }else{ %>
+                  <a href="javascript:"></a>
+           <% }
+           } %>
+    </script>   
+    <script src="js/jquery.min.1.7.js"></script>                                        
+    <script src="js/underscore.min.1.4.4.js"></script>
+    <script src="js/backbone.min.1.1.js"></script>
+    <script src="js/backbone_gallery.js"></script>
+</body>
+</html>
